@@ -1,0 +1,683 @@
+<!DOCTYPE html>
+<html lang="de-CH">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Zürich heute</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+<style>
+/* Layout: compact desk board. A sticky bar carries name, status and day tabs; the main column shows the chosen day (weather and desk notes in one strip, then the programme set like a timetable); on wide screens a side column holds Advent, running, coming up and links. One column on phones. */
+:root {
+  --bg: #edf1f5;
+  --surface: #ffffff;
+  --sunken: #f3f6f9;
+  --ink: #0e1a28;
+  --muted: #57667a;
+  --line: #d8e0e9;
+  --accent: #0a5aa8;
+  --accent-soft: #e2ecf8;
+  --on-accent: #ffffff;
+  --warn: #a24f0a;
+  --warn-soft: #fbeee0;
+  --festive: #9b1c2c;
+  --festive-soft: #fbecee;
+  --zh-white: #ffffff;
+  --font-ui: "Inter Tight", "Helvetica Neue", Arial, sans-serif;
+  --font-num: "IBM Plex Mono", ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0a1118;
+    --surface: #121c28;
+    --sunken: #0f1822;
+    --ink: #e5ecf4;
+    --muted: #93a3b6;
+    --line: #22324a;
+    --accent: #6ba9ec;
+    --accent-soft: #15304d;
+    --on-accent: #0a1118;
+    --warn: #f0a457;
+    --warn-soft: #3a2713;
+    --festive: #f28b97;
+    --festive-soft: #3a1820;
+    --zh-white: #e5ecf4;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #0a1118;
+  --surface: #121c28;
+  --sunken: #0f1822;
+  --ink: #e5ecf4;
+  --muted: #93a3b6;
+  --line: #22324a;
+  --accent: #6ba9ec;
+  --accent-soft: #15304d;
+  --on-accent: #0a1118;
+  --warn: #f0a457;
+  --warn-soft: #3a2713;
+  --festive: #f28b97;
+  --festive-soft: #3a1820;
+  --zh-white: #e5ecf4;
+  color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+html, body { margin: 0; }
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-ui);
+  font-size: 15px;
+  line-height: 1.4;
+  -webkit-font-smoothing: antialiased;
+}
+body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 10; background: var(--surface); }
+a { color: var(--accent); text-underline-offset: 2px; }
+a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 4px; }
+button { font: inherit; }
+
+/* Sticky bar */
+.bar { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 5; background: var(--surface); border-bottom: 1px solid var(--line); }
+.bar-in {
+  max-width: 1180px; margin: 0 auto; padding-block: 8px;
+  padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px));
+  display: grid; gap: 8px;
+}
+.brand-row { display: flex; align-items: center; gap: 8px 10px; flex-wrap: wrap; }
+.mark {
+  width: 15px; height: 18px; border-radius: 1px 1px 8px 8px; flex: none;
+  background: linear-gradient(to bottom left, var(--zh-white) 50%, var(--accent) 50%);
+  border: 1.5px solid var(--accent);
+}
+h1 { font-size: 18px; font-weight: 700; margin: 0; letter-spacing: -0.01em; line-height: 1.1; }
+.status { display: flex; flex-wrap: wrap; gap: 4px 8px; align-items: center; font-size: 12.5px; color: var(--muted); margin-left: auto; font-variant-numeric: tabular-nums; }
+.pill { display: inline-flex; align-items: center; gap: 5px; padding: 1px 8px; border-radius: 999px; font-size: 12px; font-weight: 600; background: var(--accent-soft); color: var(--accent); }
+.pill.stale { background: var(--warn-soft); color: var(--warn); }
+.pill::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background: currentColor; }
+.days { display: flex; gap: 4px; overflow-x: auto; scrollbar-width: none; }
+.days::-webkit-scrollbar { display: none; }
+.day {
+  flex: none; padding: 5px 10px; border-radius: 7px; border: 1px solid var(--line); background: var(--surface);
+  color: var(--ink); font-size: 13.5px; font-weight: 600; cursor: pointer; display: inline-flex; gap: 5px; align-items: baseline;
+}
+.day .wd { color: var(--muted); }
+.day .dn { font-family: var(--font-num); font-size: 12.5px; font-weight: 500; }
+.day:hover { border-color: var(--accent); }
+.day[aria-pressed="true"] { background: var(--accent); border-color: var(--accent); color: var(--on-accent); }
+.day[aria-pressed="true"] .wd { color: inherit; opacity: 0.85; }
+
+/* Page grid */
+.wrap {
+  max-width: 1180px; margin: 0 auto; padding-block: 14px 36px;
+  padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px));
+  display: grid; gap: 14px; grid-template-columns: minmax(0, 1fr); align-items: start;
+}
+.col { display: grid; gap: 14px; min-width: 0; align-content: start; }
+@media (min-width: 960px) { .wrap { grid-template-columns: minmax(0, 1fr) 400px; gap: 16px; } }
+
+/* Panels */
+.panel { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; overflow: hidden; min-width: 0; }
+.panel-h { display: flex; flex-wrap: wrap; align-items: baseline; gap: 2px 8px; padding: 8px 14px; border-bottom: 1px solid var(--line); }
+h2 { font-size: 12px; text-transform: uppercase; letter-spacing: 0.07em; font-weight: 700; margin: 0; color: var(--muted); white-space: nowrap; }
+.count { font-size: 12px; color: var(--muted); font-weight: 500; margin-left: auto; font-variant-numeric: tabular-nums; }
+.list { list-style: none; margin: 0; padding: 0; }
+.list > li { border-top: 1px solid var(--line); }
+.list > li:first-child { border-top: 0; }
+.empty-list { padding: 12px 14px; color: var(--muted); font-size: 14px; }
+
+/* Day strip: date, weather, desk notes */
+.day-head { padding: 10px 14px; display: grid; gap: 3px; }
+.dateline { font-size: 17px; font-weight: 700; margin: 0; text-wrap: balance; }
+.wx { display: flex; flex-wrap: wrap; gap: 2px 12px; align-items: baseline; font-size: 13.5px; color: var(--muted); font-variant-numeric: tabular-nums; }
+.wx .t { font-family: var(--font-num); font-size: 14.5px; font-weight: 600; color: var(--ink); }
+.wx .s { color: var(--ink); font-weight: 600; }
+.hint { display: grid; grid-template-columns: 58px minmax(0, 1fr); gap: 10px; padding: 7px 14px 7px 14px; font-size: 14px; box-shadow: inset 3px 0 0 var(--accent); background: var(--accent-soft); }
+.hint .lv { font-size: 11px; text-transform: uppercase; letter-spacing: 0.06em; font-weight: 700; color: var(--accent); padding-top: 2px; }
+.hint.warn { box-shadow: inset 3px 0 0 var(--warn); background: var(--warn-soft); }
+.hint.warn .lv { color: var(--warn); }
+.hints > li { border-top: 1px solid var(--line); }
+
+/* Programme as a timetable */
+.filters { display: flex; gap: 4px; overflow-x: auto; padding: 7px 14px; border-bottom: 1px solid var(--line); scrollbar-width: none; background: var(--sunken); }
+.filters::-webkit-scrollbar { display: none; }
+.filter, .adv-tab {
+  flex: none; font-size: 12.5px; font-weight: 600; padding: 3px 10px; border-radius: 999px;
+  border: 1px solid var(--line); background: var(--surface); color: var(--muted); cursor: pointer;
+}
+.filter[aria-pressed="true"] { border-color: var(--accent); color: var(--accent); background: var(--accent-soft); }
+.ev { display: grid; grid-template-columns: 50px minmax(0, 1fr); gap: 10px; padding: 8px 14px; }
+.ev.pick { box-shadow: inset 3px 0 0 var(--accent); }
+.time { font-family: var(--font-num); font-size: 14px; font-weight: 600; line-height: 1.35; font-variant-numeric: tabular-nums; }
+.time .end { display: block; font-size: 11.5px; font-weight: 500; color: var(--muted); }
+.time.word { font-family: var(--font-ui); font-size: 12px; color: var(--muted); padding-top: 1px; }
+.line1 { display: flex; flex-wrap: wrap; align-items: baseline; gap: 2px 8px; }
+.ttl { font-weight: 600; font-size: 15px; line-height: 1.3; }
+.ttl a { color: var(--ink); text-decoration-color: var(--line); }
+.ttl a:hover { color: var(--accent); }
+.sub { font-size: 13px; color: var(--muted); margin-top: 1px; }
+.sub .nt { color: var(--ink); }
+.chip { font-size: 11px; font-weight: 600; padding: 0 6px; border-radius: 4px; border: 1px solid var(--line); color: var(--muted); line-height: 17px; white-space: nowrap; }
+.chip.tipp { background: var(--accent); border-color: var(--accent); color: var(--on-accent); }
+.chip.cat { border-color: transparent; background: var(--sunken); }
+.chip.cover { border-color: var(--accent); color: var(--accent); }
+.chip.check { border-color: var(--warn); color: var(--warn); white-space: normal; display: inline-block; margin-top: 3px; }
+
+/* Advent */
+.advent .panel-h { background: var(--festive-soft); }
+.advent h2, .advent .count { color: var(--festive); }
+.adv-tabs { display: flex; gap: 4px; overflow-x: auto; padding: 7px 14px; border-bottom: 1px solid var(--line); scrollbar-width: none; }
+.adv-tab[aria-pressed="true"] { border-color: var(--festive); color: var(--festive); background: var(--festive-soft); }
+.mk { padding: 8px 14px; display: grid; gap: 1px; }
+.dt { font-family: var(--font-num); font-size: 12px; font-weight: 500; white-space: nowrap; margin-left: auto; font-variant-numeric: tabular-nums; }
+.advent .dt { color: var(--festive); }
+.note-s { font-size: 12.5px; color: var(--muted); }
+.row { display: grid; grid-template-columns: 74px minmax(0, 1fr); gap: 10px; padding: 8px 14px; }
+.row .pd { font-family: var(--font-num); font-size: 12.5px; font-weight: 600; line-height: 1.4; font-variant-numeric: tabular-nums; }
+.advent .row .pd { color: var(--festive); }
+.row .pd small { display: block; font-family: var(--font-ui); font-size: 11.5px; font-weight: 600; color: var(--muted); }
+.row .tx { font-size: 13.5px; }
+
+/* Museums and cinemas */
+.svc-tabs { display: flex; gap: 4px; overflow-x: auto; padding: 7px 14px; border-bottom: 1px solid var(--line); scrollbar-width: none; background: var(--sunken); }
+.svc-tab { flex: none; font-size: 12.5px; font-weight: 600; padding: 3px 10px; border-radius: 999px; border: 1px solid var(--line); background: var(--surface); color: var(--muted); cursor: pointer; }
+.svc-tab[aria-pressed="true"] { border-color: var(--accent); color: var(--accent); background: var(--accent-soft); }
+.svc-cap { padding: 7px 14px; font-size: 12.5px; color: var(--muted); border-bottom: 1px solid var(--line); }
+.svc-cap b { color: var(--ink); font-weight: 600; }
+.mu { padding: 8px 14px; display: grid; gap: 1px; }
+.mu.closed .ttl a { color: var(--muted); }
+.chip.open { border-color: var(--accent); color: var(--accent); background: var(--accent-soft); }
+.chip.shut { border-color: var(--line); color: var(--muted); background: var(--sunken); }
+.chip.spec { border-color: var(--warn); color: var(--warn); }
+.film { padding: 8px 14px; display: grid; gap: 2px; }
+.shows { display: grid; gap: 1px; font-size: 13px; }
+.shows .sh { display: grid; grid-template-columns: minmax(0, 156px) minmax(0, 1fr); gap: 8px; }
+.shows .cn { color: var(--muted); }
+.shows .tm { font-family: var(--font-num); font-size: 12.5px; font-variant-numeric: tabular-nums; }
+.sub-h { padding: 6px 14px; font-size: 11.5px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: var(--muted); background: var(--sunken); }
+
+/* Running and coming up */
+.run { padding: 8px 14px; display: grid; gap: 1px; }
+.dt-s { font-family: var(--font-num); font-size: 12px; font-weight: 500; color: var(--accent); font-variant-numeric: tabular-nums; }
+.preview .pd { color: var(--muted); }
+
+/* Links */
+.links { display: flex; flex-wrap: wrap; gap: 6px; padding: 10px 14px; }
+.links a { font-size: 13px; font-weight: 600; padding: 4px 9px; border-radius: 6px; border: 1px solid var(--line); text-decoration: none; color: var(--ink); background: var(--surface); }
+.links a:hover { border-color: var(--accent); color: var(--accent); }
+
+footer { font-size: 12.5px; color: var(--muted); display: grid; gap: 2px; padding: 0 2px; }
+.error { padding: 10px 12px; border-radius: 8px; background: var(--warn-soft); color: var(--warn); font-weight: 600; }
+
+@media (max-width: 420px) {
+  .ev { grid-template-columns: 46px minmax(0, 1fr); gap: 8px; }
+  .row { grid-template-columns: 66px minmax(0, 1fr); gap: 8px; }
+}
+@media (max-width: 560px) { .ev .chip.cat { display: none; } .shows .sh { grid-template-columns: minmax(0, 138px) minmax(0, 1fr); } }
+@media (prefers-reduced-motion: reduce) { * { scroll-behavior: auto !important; } }
+</style>
+</head>
+<body>
+<div class="bar">
+  <div class="bar-in">
+    <div class="brand-row">
+      <span class="mark" aria-hidden="true"></span>
+      <h1>Zürich heute</h1>
+      <div class="status" id="status"></div>
+    </div>
+    <nav class="days" id="days" aria-label="Tag wählen"></nav>
+  </div>
+</div>
+
+<main class="wrap">
+  <div class="col">
+    <section class="panel" aria-labelledby="dateline">
+      <div class="day-head">
+        <p class="dateline" id="dateline">Programm wird geladen</p>
+        <div class="wx" id="weather">Wetter wird geladen.</div>
+      </div>
+      <ul class="list hints" id="hints" aria-label="Für den Desk"></ul>
+    </section>
+
+    <section class="panel" aria-labelledby="h-prog">
+      <div class="panel-h"><h2 id="h-prog">Programm</h2><span class="count" id="count"></span></div>
+      <div class="filters" id="filters" role="group" aria-label="Nach Kategorie filtern"></div>
+      <ul class="list" id="events"><li class="empty-list">Wird geladen.</li></ul>
+    </section>
+
+    <section id="svc-sec" class="panel" aria-labelledby="h-svc" hidden>
+      <div class="panel-h"><h2 id="h-svc">Museen &amp; Kinos</h2><span class="count" id="svc-count"></span></div>
+      <div class="svc-tabs" id="svc-tabs" role="group" aria-label="Ansicht wählen"></div>
+      <div id="svc-body"></div>
+    </section>
+  </div>
+
+  <aside class="col">
+    <section id="adv-sec" class="panel advent" aria-labelledby="h-adv" hidden>
+      <div class="panel-h"><h2 id="h-adv">Advent &amp; Weihnachten</h2><span class="count" id="adv-count"></span></div>
+      <div class="adv-tabs" id="adv-tabs" role="group" aria-label="Ansicht wählen"></div>
+      <ul class="list" id="adv-list"></ul>
+    </section>
+
+    <section class="panel" aria-labelledby="h-run">
+      <div class="panel-h"><h2 id="h-run">Läuft gerade</h2><span class="count" id="run-count"></span></div>
+      <ul class="list" id="running"></ul>
+    </section>
+
+    <section class="panel preview" aria-labelledby="h-prev">
+      <div class="panel-h"><h2 id="h-prev">Demnächst</h2></div>
+      <ul class="list" id="preview"></ul>
+    </section>
+
+    <section class="panel" aria-labelledby="h-links">
+      <div class="panel-h"><h2 id="h-links">Live nachschauen</h2></div>
+      <div class="links">
+        <a id="zurinet" href="https://zuri.net/de/zurich/agenda/16-11-2026" title="zuri.net, alle Events von heute">Agenda des Tages</a>
+        <a href="https://www.opernhaus.ch/en/spielplan/calendar/" title="Spielplan und Tickets">Opernhaus</a>
+        <a href="https://www.tonhalle-orchester.ch/en/concerts/kalender/" title="Konzertkalender">Tonhalle</a>
+        <a href="https://hallenstadion.ch" title="Konzerte und Shows">Hallenstadion</a>
+        <a href="https://www.sihf.ch/de/game-center/team/spielplan/1-1-101139" title="Spielplan National League">ZSC Lions</a>
+        <a href="https://www.srf.ch/meteo" title="Wetter Zürich">SRF Meteo</a>
+        <a href="https://www.zuerich.com/de/besuchen/oeffnungszeiten-festtage" title="Zürich Tourismus">Öffnungszeiten Festtage</a>
+        <a href="https://www.localcities.ch/de/veranstaltungen/zuerich/609" title="Veranstaltungen Stadt Zürich">Localcities</a>
+      </div>
+    </section>
+
+    <footer>
+      <div id="updated"></div>
+      <div>Aktualisiert sich jeden Morgen gegen 5:35 Uhr automatisch. Angaben ohne Gewähr, vor einer Buchung beim Veranstalter prüfen.</div>
+    </footer>
+  </aside>
+</main>
+
+<script>
+(function () {
+  "use strict";
+  var TZ = "Europe/Zurich";
+  var state = { data: null, day: null, cat: "Alle", adv: "markets", svc: "museums" };
+
+  function todayISO() {
+    return new Intl.DateTimeFormat("en-CA", { timeZone: TZ, year: "numeric", month: "2-digit", day: "2-digit" }).format(new Date());
+  }
+  function asDate(iso) { var p = iso.split("-"); return new Date(Date.UTC(+p[0], +p[1] - 1, +p[2], 12)); }
+  function fmt(iso, opts) { return new Intl.DateTimeFormat("de-CH", Object.assign({ timeZone: "UTC" }, opts)).format(asDate(iso)); }
+  function el(tag, cls, text) { var e = document.createElement(tag); if (cls) e.className = cls; if (text != null) e.textContent = text; return e; }
+  function link(text, url) {
+    if (!url) return document.createTextNode(text);
+    var a = document.createElement("a"); a.href = url; a.textContent = text; a.rel = "noopener"; a.target = "_blank"; return a;
+  }
+  function wd(iso) { return fmt(iso, { weekday: "short" }).replace(".", ""); }
+  function dm(iso) { return fmt(iso, { day: "2-digit", month: "2-digit" }); }
+  function shortDate(iso) { return wd(iso) + " " + dm(iso); }
+  function title(text, url) { var t = el("span", "ttl"); t.appendChild(link(text, url)); return t; }
+  function sub(venue, note) {
+    var s = el("div", "sub");
+    if (venue) s.appendChild(document.createTextNode(venue));
+    if (venue && note) s.appendChild(document.createTextNode(" · "));
+    if (note) s.appendChild(el("span", "nt", note));
+    return s;
+  }
+
+  // Live link to today's agenda on zuri.net works even when the data is old.
+  var t = todayISO().split("-");
+  document.getElementById("zurinet").href = "https://zuri.net/de/zurich/agenda/" + t[2] + "-" + t[1] + "-" + t[0];
+
+  function pickDefaultDay(days) {
+    var today = todayISO();
+    for (var i = 0; i < days.length; i++) if (days[i].date === today) return days[i].date;
+    for (var j = 0; j < days.length; j++) if (days[j].date > today) return days[j].date;
+    return days.length ? days[days.length - 1].date : null;
+  }
+
+  function renderStatus() {
+    var d = state.data, st = document.getElementById("status");
+    st.innerHTML = "";
+    var upd = new Date(d.updated);
+    var ageH = (Date.now() - upd.getTime()) / 36e5;
+    st.appendChild(el("span", "pill" + (ageH > 30 ? " stale" : ""), ageH > 30 ? "Nicht aktuell" : "Aktuell"));
+    var when = new Intl.DateTimeFormat("de-CH", { timeZone: TZ, weekday: "short", day: "2-digit", month: "2-digit", hour: "2-digit", minute: "2-digit" }).format(upd);
+    var p2 = new Intl.DateTimeFormat("de-CH", { timeZone: TZ, day: "2-digit", month: "2-digit", hour: "2-digit", minute: "2-digit", hour12: false }).formatToParts(upd);
+    var part = function (k) { for (var i = 0; i < p2.length; i++) if (p2[i].type === k) return p2[i].value; return ""; };
+    st.appendChild(el("span", "stand", "Stand " + part("day") + "." + part("month") + ". " + part("hour") + ":" + part("minute")));
+    document.getElementById("updated").textContent = "Letzte Aktualisierung: " + when + " Uhr.";
+  }
+
+  function renderDays() {
+    var nav = document.getElementById("days"); nav.innerHTML = "";
+    var today = todayISO();
+    state.data.days.forEach(function (day) {
+      var b = el("button", "day"); b.type = "button"; b.id = "day-" + day.date;
+      b.setAttribute("aria-pressed", String(day.date === state.day));
+      b.appendChild(el("span", "wd", day.date === today ? "Heute" : wd(day.date)));
+      b.appendChild(el("span", "dn", dm(day.date)));
+      b.addEventListener("click", function () { state.day = day.date; state.cat = "Alle"; renderAll(); });
+      nav.appendChild(b);
+    });
+  }
+
+  function currentDay() {
+    var days = state.data.days;
+    for (var i = 0; i < days.length; i++) if (days[i].date === state.day) return days[i];
+    return null;
+  }
+
+  function renderWeather(day) {
+    var w = document.getElementById("weather"); w.innerHTML = "";
+    if (!day.weather) {
+      w.appendChild(document.createTextNode("Prognose folgt bei einer der nächsten Aktualisierungen. "));
+      w.appendChild(link("SRF Meteo öffnen", "https://www.srf.ch/meteo"));
+      return;
+    }
+    var x = day.weather;
+    w.appendChild(el("span", "t", x.max + "° / " + x.min + "°"));
+    w.appendChild(el("span", "s", x.summary));
+    if (x.rain_mm != null) w.appendChild(el("span", null, "Regen " + String(x.rain_mm).replace(".", ",") + " mm"));
+    if (x.wind_kmh != null) w.appendChild(el("span", null, "Wind " + x.wind_kmh + " km/h"));
+    if (x.sunset) w.appendChild(el("span", null, "Sonnenuntergang " + x.sunset));
+    if (x.source) { var s = el("span"); s.appendChild(link("Quelle", x.source)); w.appendChild(s); }
+  }
+
+  function renderHints(day) {
+    var ul = document.getElementById("hints"); ul.innerHTML = "";
+    var hints = day.hints || [];
+    ul.hidden = hints.length === 0;
+    hints.forEach(function (h) {
+      var li = el("li");
+      var row = el("div", "hint" + (h.level === "warn" ? " warn" : ""));
+      row.appendChild(el("span", "lv", h.level === "warn" ? "Achtung" : "Info"));
+      row.appendChild(el("span", null, h.text));
+      li.appendChild(row); ul.appendChild(li);
+    });
+  }
+
+  function renderFilters(day) {
+    var box = document.getElementById("filters"); box.innerHTML = "";
+    var cats = ["Alle"];
+    (day.events || []).forEach(function (e) { if (e.cat && cats.indexOf(e.cat) < 0) cats.push(e.cat); });
+    if (cats.length < 3) { box.hidden = true; return; }
+    box.hidden = false;
+    cats.forEach(function (c, i) {
+      var b = el("button", "filter", c); b.type = "button"; b.id = "filter-" + i;
+      b.setAttribute("aria-pressed", String(c === state.cat));
+      b.addEventListener("click", function () { state.cat = c; renderFilters(day); renderEvents(day); });
+      box.appendChild(b);
+    });
+  }
+
+  function renderEvents(day) {
+    var ul = document.getElementById("events"); ul.innerHTML = "";
+    var all = day.events || [];
+    var list = all.filter(function (e) { return state.cat === "Alle" || e.cat === state.cat; });
+    document.getElementById("count").textContent = all.length ? (all.length + " Einträge") : "";
+    if (!list.length) { ul.appendChild(el("li", "empty-list", "Für diesen Tag sind noch keine Einträge erfasst. Die Agenda von zuri.net zeigt alles Weitere.")); return; }
+    list.forEach(function (e) {
+      var li = el("li", "ev" + (e.pick ? " pick" : ""));
+      var isClock = /^\d{1,2}:\d{2}$/.test(e.time || "");
+      var tm = el("div", "time" + (isClock ? "" : " word"), e.time || "");
+      if (e.end) tm.appendChild(el("span", "end", "bis " + e.end));
+      li.appendChild(tm);
+      var body = el("div");
+      var l1 = el("div", "line1");
+      l1.appendChild(title(e.title, e.url));
+      if (e.pick) l1.appendChild(el("span", "chip tipp", "Tipp"));
+      if (e.cat) l1.appendChild(el("span", "chip cat", e.cat));
+      body.appendChild(l1);
+      if (e.venue || e.note) body.appendChild(sub(e.venue, e.note));
+      if (e.check) body.appendChild(el("span", "chip check", e.check));
+      li.appendChild(body);
+      ul.appendChild(li);
+    });
+  }
+
+  // Advent & Weihnachten: items drop out by themselves once their date ("end", "until" or "date") has passed.
+  var ADV_VIEWS = [
+    { key: "markets", label: "Märkte & Lichter" },
+    { key: "dates", label: "Termine" },
+    { key: "holidays", label: "Festtage" }
+  ];
+  function advItems(key) {
+    var a = state.data.advent || {}, today = todayISO();
+    if (key === "markets") return (a.markets || []).filter(function (m) { return !m.end || m.end >= today; });
+    if (key === "dates") return (a.dates || []).filter(function (d) { return (d.until || d.date) >= today; })
+      .sort(function (x, y) { var kx = (x.date < today ? today : x.date), ky = (y.date < today ? today : y.date); return kx < ky ? -1 : kx > ky ? 1 : String(x.time || "").localeCompare(String(y.time || "")); });
+    return (a.holidays || []).filter(function (h) { return h.date >= today; });
+  }
+
+  function renderAdvent() {
+    var sec = document.getElementById("adv-sec");
+    var has = ADV_VIEWS.some(function (v) { return advItems(v.key).length; });
+    sec.hidden = !has;
+    if (!has) return;
+    if (!advItems(state.adv).length) { for (var i = 0; i < ADV_VIEWS.length; i++) if (advItems(ADV_VIEWS[i].key).length) { state.adv = ADV_VIEWS[i].key; break; } }
+
+    var today = todayISO(), year = today.slice(0, 4);
+    var days = Math.round((asDate(year + "-12-24") - asDate(today)) / 864e5);
+    document.getElementById("adv-count").textContent = days > 1 ? ("noch " + days + " Tage bis Heiligabend") : days === 1 ? "morgen ist Heiligabend" : days === 0 ? "heute ist Heiligabend" : "";
+
+    var tabs = document.getElementById("adv-tabs"); tabs.innerHTML = "";
+    ADV_VIEWS.forEach(function (v) {
+      var n = advItems(v.key).length; if (!n) return;
+      var b = el("button", "adv-tab", v.label + " " + n); b.type = "button"; b.id = "adv-tab-" + v.key;
+      b.setAttribute("aria-pressed", String(v.key === state.adv));
+      b.addEventListener("click", function () { state.adv = v.key; renderAdvent(); });
+      tabs.appendChild(b);
+    });
+
+    var ul = document.getElementById("adv-list"); ul.innerHTML = "";
+    advItems(state.adv).forEach(function (it) {
+      var li = el("li");
+      if (state.adv === "markets") {
+        var m = el("div", "mk");
+        var l1 = el("div", "line1");
+        l1.appendChild(title(it.title, it.url));
+        l1.appendChild(el("span", "dt", it.dates));
+        m.appendChild(l1);
+        if (it.venue || it.hours) m.appendChild(sub(it.venue, it.hours));
+        if (it.note) m.appendChild(el("div", "note-s", it.note));
+        if (it.covered || it.check) {
+          var tg = el("div", "line1");
+          if (it.covered) tg.appendChild(el("span", "chip cover", "Überdacht"));
+          if (it.check) tg.appendChild(el("span", "chip check", it.check));
+          m.appendChild(tg);
+        }
+        li.appendChild(m);
+      } else {
+        var row = el("div", "row");
+        var pd = el("div", "pd");
+        if (state.adv === "dates") {
+          pd.appendChild(document.createTextNode(it.until && it.date < today ? "bis " + dm(it.until) : shortDate(it.date)));
+          if (it.time) pd.appendChild(el("small", null, it.time));
+        } else {
+          pd.appendChild(document.createTextNode(shortDate(it.date)));
+          if (it.label) pd.appendChild(el("small", null, it.label));
+        }
+        row.appendChild(pd);
+        var body = el("div");
+        if (state.adv === "dates") {
+          var l2 = el("div", "line1");
+          l2.appendChild(title(it.title, it.url));
+          if (it.pick) l2.appendChild(el("span", "chip tipp", "Tipp"));
+          body.appendChild(l2);
+          if (it.venue || it.note) body.appendChild(sub(it.venue, it.note));
+          if (it.check) body.appendChild(el("span", "chip check", it.check));
+        } else {
+          var tx = el("div", "tx"); tx.appendChild(document.createTextNode(it.text + " "));
+          if (it.url) tx.appendChild(link("Quelle", it.url));
+          body.appendChild(tx);
+        }
+        row.appendChild(body);
+        li.appendChild(row);
+      }
+      ul.appendChild(li);
+    });
+  }
+
+  // Museen & Kinos. Museum status is worked out for the selected day: a dated special entry wins over the weekday hours.
+  var WD_KEYS = ["so", "mo", "di", "mi", "do", "fr", "sa"];
+  function hm(s) { var p = s.split(":"); return p[1] === "00" ? String(+p[0]) : (+p[0]) + ":" + p[1]; }
+  function range(r) { var p = r.split("-"); return hm(p[0]) + " bis " + hm(p[1]) + " Uhr"; }
+  function museumStatus(m, iso) {
+    if (!m.hours) return { state: "unknown" };
+    var special = m.special && Object.prototype.hasOwnProperty.call(m.special, iso);
+    var v = special ? m.special[iso] : m.hours[WD_KEYS[asDate(iso).getUTCDay()]];
+    if (!v) return { state: "closed", special: special };
+    return { state: "open", text: range(v), late: +v.split("-")[1].split(":")[0] >= 20, special: special };
+  }
+
+  function renderService() {
+    var d = state.data, sec = document.getElementById("svc-sec");
+    var museums = d.museums || [], cinemas = d.cinemas || [], films = d.films || null;
+    var today = todayISO();
+    var filmsFresh = films && films.date >= today && (films.items || []).length;
+    var views = [];
+    if (museums.length) views.push({ key: "museums", label: "Museen" });
+    if (cinemas.length || filmsFresh) views.push({ key: "cinemas", label: "Kinos" });
+    sec.hidden = !views.length;
+    if (!views.length) return;
+    if (!views.some(function (v) { return v.key === state.svc; })) state.svc = views[0].key;
+
+    var tabs = document.getElementById("svc-tabs"); tabs.innerHTML = "";
+    views.forEach(function (v) {
+      var b = el("button", "svc-tab", v.label); b.type = "button"; b.id = "svc-tab-" + v.key;
+      b.setAttribute("aria-pressed", String(v.key === state.svc));
+      b.addEventListener("click", function () { state.svc = v.key; renderService(); });
+      tabs.appendChild(b);
+    });
+
+    var body = document.getElementById("svc-body"); body.innerHTML = "";
+    var cnt = document.getElementById("svc-count");
+    if (state.svc === "museums") {
+      var iso = state.day || today;
+      var rows = museums.map(function (m) { return { m: m, s: museumStatus(m, iso) }; });
+      var rank = { open: 0, unknown: 1, closed: 2 };
+      rows.sort(function (a, b) { return rank[a.s.state] - rank[b.s.state]; });
+      var openN = rows.filter(function (r) { return r.s.state === "open"; }).length;
+      cnt.textContent = openN + " von " + rows.length + " offen";
+      var cap = el("div", "svc-cap");
+      cap.appendChild(document.createTextNode("Öffnungszeiten am "));
+      cap.appendChild(el("b", null, fmt(iso, { weekday: "long", day: "numeric", month: "long" })));
+      cap.appendChild(document.createTextNode(". Wechselt mit der Tagesauswahl oben."));
+      body.appendChild(cap);
+      var ul = el("ul", "list");
+      rows.forEach(function (r) {
+        var m = r.m, s = r.s, li = el("li"), box = el("div", "mu" + (s.state === "closed" ? " closed" : ""));
+        var l1 = el("div", "line1");
+        l1.appendChild(title(m.name, m.url));
+        if (s.state === "open") l1.appendChild(el("span", "chip open", "Offen " + s.text));
+        else if (s.state === "closed") l1.appendChild(el("span", "chip shut", "Geschlossen"));
+        else l1.appendChild(el("span", "chip shut", "Zeiten auf der Website"));
+        if (s.special) l1.appendChild(el("span", "chip spec", "Sonderzeiten"));
+        box.appendChild(l1);
+        if (m.address || m.summary) box.appendChild(sub(m.address, m.summary));
+        if (m.note) box.appendChild(el("div", "note-s", m.note));
+        if (m.check) box.appendChild(el("span", "chip check", m.check));
+        li.appendChild(box); ul.appendChild(li);
+      });
+      body.appendChild(ul);
+      return;
+    }
+
+    cnt.textContent = filmsFresh ? (films.items.length + " Filme") : "";
+    if (filmsFresh) {
+      var cap2 = el("div", "svc-cap");
+      cap2.appendChild(document.createTextNode("Englische Originalversionen am "));
+      cap2.appendChild(el("b", null, fmt(films.date, { weekday: "long", day: "numeric", month: "long" })));
+      cap2.appendChild(document.createTextNode(". " + (films.note || "") + " "));
+      if (films.source) cap2.appendChild(link("Ganzes Programm", films.source));
+      body.appendChild(cap2);
+      var fl = el("ul", "list");
+      films.items.forEach(function (f) {
+        var li = el("li"), box = el("div", "film");
+        var l1 = el("div", "line1");
+        l1.appendChild(title(f.title, f.url || films.source));
+        if (f.version) l1.appendChild(el("span", "chip cat", f.version));
+        if (f.pick) l1.appendChild(el("span", "chip tipp", "Tipp"));
+        box.appendChild(l1);
+        var sh = el("div", "shows");
+        (f.shows || []).forEach(function (x) {
+          var r = el("div", "sh"); r.appendChild(el("span", "cn", x.cinema)); r.appendChild(el("span", "tm", x.times)); sh.appendChild(r);
+        });
+        box.appendChild(sh);
+        if (f.note) box.appendChild(el("div", "note-s", f.note));
+        li.appendChild(box); fl.appendChild(li);
+      });
+      body.appendChild(fl);
+    } else if (films) {
+      body.appendChild(el("div", "svc-cap", "Die Filmauswahl wird bei der nächsten Aktualisierung am Morgen erneuert."));
+    }
+    if (cinemas.length) {
+      body.appendChild(el("div", "sub-h", "Kinos in der Stadt"));
+      var cl = el("ul", "list");
+      cinemas.forEach(function (c) {
+        var li = el("li"), box = el("div", "mu");
+        var l1 = el("div", "line1"); l1.appendChild(title(c.name, c.url)); box.appendChild(l1);
+        if (c.area || c.note) box.appendChild(sub(c.area, c.note));
+        li.appendChild(box); cl.appendChild(li);
+      });
+      body.appendChild(cl);
+    }
+  }
+
+  function renderRunning() {
+    var ul = document.getElementById("running"); ul.innerHTML = "";
+    var items = state.data.running || [];
+    document.getElementById("run-count").textContent = items.length ? String(items.length) : "";
+    if (!items.length) { ul.appendChild(el("li", "empty-list", "Noch nichts erfasst.")); return; }
+    items.forEach(function (r) {
+      var li = el("li"), c = el("div", "run");
+      c.appendChild(el("div", "dt-s", r.dates));
+      var l1 = el("div", "line1");
+      l1.appendChild(title(r.title, r.url));
+      c.appendChild(l1);
+      if (r.venue || r.note) c.appendChild(sub(r.venue, r.note));
+      li.appendChild(c); ul.appendChild(li);
+    });
+  }
+
+  function renderPreview() {
+    var ul = document.getElementById("preview"); ul.innerHTML = "";
+    var items = state.data.preview || [];
+    if (!items.length) { ul.appendChild(el("li", "empty-list", "Noch nichts erfasst.")); return; }
+    items.forEach(function (p) {
+      var li = el("li"), row = el("div", "row");
+      row.appendChild(el("div", "pd", shortDate(p.date)));
+      var b = el("div");
+      b.appendChild(title(p.title, p.url));
+      if (p.venue) b.appendChild(sub(p.venue, null));
+      row.appendChild(b); li.appendChild(row); ul.appendChild(li);
+    });
+  }
+
+  function renderAll() {
+    renderDays();
+    var day = currentDay();
+    if (!day) return;
+    var label = fmt(day.date, { weekday: "long", day: "numeric", month: "long", year: "numeric" });
+    var isToday = day.date === todayISO();
+    document.getElementById("dateline").textContent = (isToday ? "Heute, " : "Vorschau: ") + label;
+    renderWeather(day); renderHints(day); renderFilters(day); renderEvents(day); renderService();
+  }
+
+  function showError(msg) {
+    document.getElementById("dateline").textContent = "Programm konnte nicht geladen werden";
+    var ul = document.getElementById("events"); ul.innerHTML = "";
+    var li = el("li", "empty-list"); li.appendChild(el("div", "error", msg)); ul.appendChild(li);
+    document.getElementById("weather").textContent = "Keine Daten. Bitte die Live-Links nutzen.";
+  }
+
+  fetch("data.json", { cache: "no-store" })
+    .then(function (r) { if (!r.ok) throw new Error("HTTP " + r.status); return r.json(); })
+    .then(function (d) {
+      state.data = d;
+      state.day = pickDefaultDay(d.days || []);
+      renderStatus(); renderAll(); renderAdvent(); renderRunning(); renderPreview();
+    })
+    .catch(function () { showError("Die Daten sind gerade nicht erreichbar. Seite neu laden oder die Live-Links verwenden."); });
+})();
+</script>
+</body>
+</html>

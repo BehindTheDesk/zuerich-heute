@@ -1,0 +1,1413 @@
+{
+  "version": 1,
+  "updated": "2026-11-18T21:11:00+01:00",
+  "days": [
+    {
+      "date": "2026-11-18",
+      "weather": {
+        "summary": "Regenschauer, windig",
+        "min": 10,
+        "max": 13,
+        "rain_mm": 2.0,
+        "wind_kmh": 24,
+        "source": "https://meteo-ch.ch/de/previsions-15-jours/zurich.html"
+      },
+      "hints": [
+        {
+          "level": "info",
+          "text": "Regenschauer bei bis zu 24 km/h Wind, aber nur rund 2 mm. Schirme am Desk bereitlegen."
+        },
+        {
+          "level": "info",
+          "text": "Opernhaus (19:00) und Tonhalle (19:30) fast zeitgleich: Taxis für den Abend früh bestellen."
+        },
+        {
+          "level": "info",
+          "text": "Morgen öffnen die Weihnachtsmärkte, Lucy wird um 18 Uhr eingeschaltet, Night Shopping 18 bis 21 Uhr. Tischwünsche für morgen Abend schon heute aufnehmen."
+        }
+      ],
+      "events": [
+        {
+          "time": "15:00",
+          "title": "Circus Monti «Poussière d'étoiles»",
+          "venue": "Kasernenareal, Militärstrasse 16",
+          "cat": "Familie",
+          "note": "Zweite Vorstellung um 20 Uhr.",
+          "url": "https://zuri.net/de/zurich/agenda/18-11-2026"
+        },
+        {
+          "time": "17:00",
+          "title": "ILLUMINARIUM «Connecting Festive Moments»",
+          "venue": "Landesmuseum, Innenhof",
+          "cat": "Kultur",
+          "note": "Licht-Installation im Innenhof, läuft bis 30. Dezember.",
+          "url": "https://zuri.net/de/zurich/agenda/18-11-2026"
+        },
+        {
+          "time": "18:00",
+          "end": "22:00",
+          "title": "Ni's Tom Yam Hot Pot: Thai Sharing Experience",
+          "venue": "Lake Side",
+          "cat": "Kulinarik",
+          "note": "Thai-Hot-Pot am Tisch, Mittwoch bis Samstag ab 18 Uhr, laut Anbieter CHF 67 pro Person.",
+          "url": "https://zuri.net/de/zurich/agenda/18-11-2026"
+        },
+        {
+          "time": "19:00",
+          "title": "Rachmaninow: Die drei Opern",
+          "venue": "Opernhaus Zürich, Hauptbühne",
+          "cat": "Klassik & Oper",
+          "pick": true,
+          "note": "Leitung Gianandrea Noseda, Regie Dmitri Tcherniakov. Ca. 3 Std. 25 Min. inkl. Pause, Russisch mit deutschen und englischen Übertiteln.",
+          "url": "https://www.opernhaus.ch/en/spielplan/calendar/rachmaninov-die-drei-opern/"
+        },
+        {
+          "time": "19:30",
+          "title": "Paavo Järvi & Lisa Larsson",
+          "venue": "Grosse Tonhalle",
+          "cat": "Klassik & Oper",
+          "pick": true,
+          "note": "Tonhalle-Orchester mit Mahler 5, Liedern von Stenhammar und Grieg und einer Uraufführung von David Philip Hefti. Um 18 Uhr Führung «Blick hinter die Kulissen».",
+          "url": "https://www.tonhalle-orchester.ch/en/concerts/kalender/paavo-jaervi-lisa-larsson-2055230/"
+        },
+        {
+          "time": "20:00",
+          "title": "Zürcher Poetikvorlesung II mit Blixa Bargeld",
+          "venue": "Museumsgesellschaft und Literaturhaus",
+          "cat": "Kultur",
+          "url": "https://zuri.net/de/zurich/agenda/18-11-2026"
+        },
+        {
+          "time": "20:00",
+          "title": "Kollektiv International Totem «Surreal Chambers»",
+          "venue": "Kunstraum Walcheturm",
+          "cat": "Konzert",
+          "note": "Neue Musik nach Alvin Lucier, mit einer Uraufführung von Charles Kwong.",
+          "url": "https://zuri.net/de/zurich/agenda/18-11-2026"
+        },
+        {
+          "time": "20:00",
+          "end": "22:00",
+          "title": "Valerù: Italo-Neo-Soul",
+          "venue": "Kulturclub Lebewohlfabrik",
+          "cat": "Konzert",
+          "url": "https://zuri.net/de/zurich/agenda/18-11-2026"
+        },
+        {
+          "time": "20:00",
+          "end": "22:30",
+          "title": "Levara (US)",
+          "venue": "Limmathaus (X-TRA)",
+          "cat": "Konzert",
+          "note": "Modern Rock.",
+          "url": "https://zuri.net/de/zurich/agenda/18-11-2026"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-19",
+      "weather": {
+        "summary": "Regenschauer, windig",
+        "min": 8,
+        "max": 12,
+        "rain_mm": 14.4,
+        "wind_kmh": 27,
+        "source": "https://meteo-ch.ch/de/previsions-15-jours/zurich.html"
+      },
+      "hints": [
+        {
+          "level": "warn",
+          "text": "Über 14 mm Regen und Wind bis 27 km/h. Für den Marktbesuch den überdachten Polarzauber im Hauptbahnhof empfehlen."
+        },
+        {
+          "level": "warn",
+          "text": "Markteröffnungen, Lucy (18 Uhr) und Night Shopping (18 bis 21 Uhr) am selben Abend: Innenstadt sehr voll. Tische rund um Bahnhofstrasse und Bellevue früh reservieren, Taxis früh bestellen."
+        }
+      ],
+      "events": [
+        {
+          "time": "ganztags",
+          "title": "Eröffnung der Weihnachtsmärkte",
+          "venue": "Bellevue Noël (Sechseläutenplatz), Polarzauber (HB), Dörfli, Münsterhof, Werdmühleplatz, Europaallee",
+          "cat": "Advent",
+          "pick": true,
+          "note": "Alle grossen Märkte starten heute; Öffnungszeiten je nach Markt verschieden.",
+          "url": "https://www.nume.ch/?p=12491"
+        },
+        {
+          "time": "18:00",
+          "title": "Weihnachtsbeleuchtung «Lucy» wird eingeschaltet",
+          "venue": "Bahnhofstrasse",
+          "cat": "Advent",
+          "pick": true,
+          "note": "Am gleichen Abend Night Shopping in der Innenstadt von 18 bis 21 Uhr.",
+          "url": "https://www.zuerich.com/de/besuchen/oeffnungszeiten-festtage"
+        },
+        {
+          "time": "19:00",
+          "end": "22:00",
+          "title": "Das Kriminal Dinner",
+          "venue": "Hotel Krone",
+          "cat": "Kulinarik",
+          "note": "Krimi-Dinnertheater.",
+          "url": "https://zuri.net/de/zurich/agenda/19-11-2026"
+        },
+        {
+          "time": "19:30",
+          "title": "Paavo Järvi & Lisa Larsson",
+          "venue": "Grosse Tonhalle",
+          "cat": "Klassik & Oper",
+          "note": "Zweite Aufführung, Mahler 5. Um 18:30 Prelude mit Künstlergespräch und Kammermusik in der Kleinen Tonhalle.",
+          "url": "https://www.tonhalle-orchester.ch/en/concerts/kalender/paavo-jaervi-lisa-larsson-2055230/"
+        },
+        {
+          "time": "19:30",
+          "end": "21:00",
+          "title": "Fortepiano Festival «Flügelschläge»: Grande Finale",
+          "venue": "Kirche St. Peter",
+          "cat": "Klassik & Oper",
+          "note": "Els Biesemans und Ensemble Elsewhere mit Hummel und Chopin.",
+          "check": "Zwei Einträge nennen 21:00 und 21:30 als Ende.",
+          "url": "https://zuri.net/de/zurich/agenda/19-11-2026"
+        },
+        {
+          "time": "19:30",
+          "end": "21:30",
+          "title": "Feder und Bogen 1: Erich Kästner",
+          "venue": "ZKO-Haus, Seefeldstrasse 305",
+          "cat": "Klassik & Oper",
+          "note": "Musiker des Zürcher Kammerorchesters verbinden Kästner-Geschichten mit Musik.",
+          "url": "https://zuri.net/de/zurich/agenda/19-11-2026"
+        },
+        {
+          "time": "19:30",
+          "end": "22:00",
+          "title": "Comedy Brew: English Stand-Up",
+          "venue": "ROBIN'S bar & coffee, beim Central",
+          "cat": "Show & Bühne",
+          "note": "Englischsprachig, rund zehn Comedians.",
+          "url": "https://zuri.net/de/zurich/agenda/19-11-2026"
+        },
+        {
+          "time": "20:00",
+          "title": "Circus Monti «Poussière d'étoiles»",
+          "venue": "Kasernenareal, Militärstrasse 16",
+          "cat": "Familie",
+          "note": "Auch um 14 Uhr.",
+          "url": "https://zuri.net/de/zurich/agenda/19-11-2026"
+        },
+        {
+          "time": "20:00",
+          "title": "Phenomden (CH): Tourabschluss",
+          "venue": "Limmathaus (X-TRA)",
+          "cat": "Konzert",
+          "note": "Reggae mit The Scrucialists.",
+          "url": "https://zuri.net/de/zurich/agenda/19-11-2026"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-20",
+      "weather": {
+        "summary": "Regenschauer, windig",
+        "min": 8,
+        "max": 10,
+        "rain_mm": 7.9,
+        "wind_kmh": 25,
+        "source": "https://meteo-ch.ch/de/previsions-15-jours/zurich.html"
+      },
+      "hints": [
+        {
+          "level": "warn",
+          "text": "Nationaler Jugendstreik angekündigt. Die Stadtpolizei lässt im Advent keine Demo in der Innenstadt zu und schlug eine Route ab Helvetiaplatz in Kreis 4 vor. Zeiten offen, vor Fahrten durch Kreis 4 Lage prüfen."
+        },
+        {
+          "level": "info",
+          "text": "Voller Theaterabend: Ballett im Opernhaus, Verdi-Requiem in der Tonhalle, Uraufführung im Schiffbau. Taxis früh bestellen."
+        }
+      ],
+      "events": [
+        {
+          "time": "19:00",
+          "title": "GC Frauen gegen FC Basel 1893",
+          "venue": "Stadion Letzigrund",
+          "cat": "Sport",
+          "note": "Women's Super League, Türöffnung 18 Uhr.",
+          "url": "https://stadionletzigrund.com/en/news/topic/football/gc-frauen-basel-1893-11-2026/"
+        },
+        {
+          "time": "19:00",
+          "title": "Romeo und Julia (Ballett von Cathy Marston)",
+          "venue": "Opernhaus Zürich, Hauptbühne",
+          "cat": "Klassik & Oper",
+          "pick": true,
+          "url": "https://www.opernhaus.ch/en/spielplan/calendar/"
+        },
+        {
+          "time": "19:30",
+          "end": "21:00",
+          "title": "Verdi: Messa da Requiem",
+          "venue": "Tonhalle Zürich",
+          "cat": "Klassik & Oper",
+          "pick": true,
+          "note": "Oratorienchor Zürich und Ars Canora mit Solisten und Orchester.",
+          "url": "https://zuri.net/de/zurich/agenda/20-11-2026"
+        },
+        {
+          "time": "19:30",
+          "title": "Chorkonzert «Je l'ayme bien»",
+          "venue": "Johanneskirche",
+          "cat": "Klassik & Oper",
+          "note": "Renaissance und Moderne, Leitung Marco Amherd.",
+          "url": "https://zuri.net/de/zurich/agenda/20-11-2026"
+        },
+        {
+          "time": "19:30",
+          "end": "21:30",
+          "title": "How To Swiss: Comedy mit Ahmet Bilge",
+          "venue": "VIOR, Löwenstrasse 2",
+          "cat": "Show & Bühne",
+          "check": "Beschreibung auf Englisch, Sprache der Show nicht angegeben.",
+          "url": "https://zuri.net/de/zurich/agenda/20-11-2026"
+        },
+        {
+          "time": "20:00",
+          "title": "Magic Kingdom (Uraufführung)",
+          "venue": "Schauspielhaus Zürich, Schiffbau Box",
+          "cat": "Show & Bühne",
+          "note": "Von Álvaro Nogales und Adrián Perea. Laut Spielplan ausverkauft, Restkarten an der Abendkasse.",
+          "url": "https://www.schauspielhaus.ch/en/spielplan"
+        },
+        {
+          "time": "20:00",
+          "title": "Zürcher Poetikvorlesung III mit Blixa Bargeld",
+          "venue": "Schauspielhaus Zürich, Pfauen",
+          "cat": "Kultur",
+          "url": "https://zuri.net/de/zurich/agenda/20-11-2026"
+        },
+        {
+          "time": "20:00",
+          "title": "Circus Monti «Poussière d'étoiles»",
+          "venue": "Kasernenareal, Militärstrasse 16",
+          "cat": "Familie",
+          "url": "https://zuri.net/de/zurich/agenda/20-11-2026"
+        },
+        {
+          "time": "20:00",
+          "title": "Ensemble Aventure «DADA-Remix»",
+          "venue": "Kunstraum Walcheturm",
+          "cat": "Konzert",
+          "note": "Archivmusik und Uraufführungen zu Zürich Dada.",
+          "url": "https://zuri.net/de/zurich/agenda/20-11-2026"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-21",
+      "weather": {
+        "summary": "Regenschauer, kühler",
+        "min": 4,
+        "max": 10,
+        "rain_mm": 9.9,
+        "wind_kmh": 20,
+        "source": "https://meteo-ch.ch/de/previsions-15-jours/zurich.html"
+      },
+      "hints": [
+        {
+          "level": "info",
+          "text": "Grosser Samstag: Cavalluna (14 und 19 Uhr) im Hallenstadion, ZSC-Heimspiel 19:45 in Altstetten, Oper 19:00. Taxis und Tische früh sichern."
+        },
+        {
+          "level": "info",
+          "text": "Kühler (4 bis 10 °C) und nass, um 10 mm Regen."
+        }
+      ],
+      "events": [
+        {
+          "time": "11:00",
+          "title": "Alice im Wunderland (Kinderoper)",
+          "venue": "Opernhaus Zürich, Hauptbühne",
+          "cat": "Familie",
+          "note": "Von Pierangelo Valtinoni, Deutsch mit deutschen Übertiteln, ca. 2 Std. inkl. Pause.",
+          "url": "https://www.opernhaus.ch/en/spielplan/calendar/alice-im-wunderland/"
+        },
+        {
+          "time": "14:00",
+          "title": "Cavalluna «Die Farben des Lebens»",
+          "venue": "Hallenstadion, Oerlikon",
+          "cat": "Familie",
+          "note": "Pferdeshow, weitere Vorstellung um 19 Uhr und am Sonntag um 13 Uhr.",
+          "url": "https://www.cavalluna.com/en/tickets/zurich"
+        },
+        {
+          "time": "15:00",
+          "title": "Circus Monti «Poussière d'étoiles»",
+          "venue": "Kasernenareal, Militärstrasse 16",
+          "cat": "Familie",
+          "note": "Zweite Vorstellung um 20 Uhr.",
+          "url": "https://zuri.net/de/zurich/agenda/21-11-2026"
+        },
+        {
+          "time": "19:00",
+          "title": "Rachmaninow: Die drei Opern",
+          "venue": "Opernhaus Zürich, Hauptbühne",
+          "cat": "Klassik & Oper",
+          "pick": true,
+          "note": "Russisch mit deutschen und englischen Übertiteln.",
+          "url": "https://www.opernhaus.ch/en/spielplan/calendar/rachmaninov-die-drei-opern/"
+        },
+        {
+          "time": "19:30",
+          "end": "21:30",
+          "title": "AOZ Konzert: Tschaikowski, Mussorgski",
+          "venue": "Tonhalle Zürich",
+          "cat": "Klassik & Oper",
+          "url": "https://zuri.net/de/zurich/agenda/21-11-2026"
+        },
+        {
+          "time": "19:30",
+          "title": "Magnifi-Canto: Bach und Holliger",
+          "venue": "Fraumünster",
+          "cat": "Klassik & Oper",
+          "note": "Zürcher Sing-Akademie und Les Passions de l'Âme.",
+          "url": "https://zuri.net/de/zurich/agenda/21-11-2026"
+        },
+        {
+          "time": "19:30",
+          "end": "22:15",
+          "title": "Krimi-Schiff «Frau Hase und die Giftspritze»",
+          "venue": "Ab Schiffstation Bürkliplatz",
+          "cat": "Kulinarik",
+          "note": "Krimi-Theater auf dem See mit 3-Gang-Menü.",
+          "url": "https://zuri.net/de/zurich/agenda/21-11-2026"
+        },
+        {
+          "time": "19:45",
+          "title": "ZSC Lions gegen HC Lugano",
+          "venue": "Swiss Life Arena, Altstetten",
+          "cat": "Sport",
+          "pick": true,
+          "url": "https://www.ticketcorner.ch/artist/zsc-lions/zsc-lions-national-league-202627-1571863/"
+        },
+        {
+          "time": "20:00",
+          "title": "Der Zauberer von Oz",
+          "venue": "Schauspielhaus Zürich, Pfauen",
+          "cat": "Show & Bühne",
+          "note": "Mit englischen Übertiteln, laut Spielplan nur noch wenige Karten.",
+          "url": "https://www.schauspielhaus.ch/en/spielplan"
+        },
+        {
+          "time": "20:30",
+          "end": "22:00",
+          "title": "Under the Northern Lights",
+          "venue": "Predigerkirche",
+          "cat": "Klassik & Oper",
+          "note": "Nordische Chormusik mit Lichtdesign.",
+          "url": "https://zuri.net/de/zurich/agenda/21-11-2026"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-22",
+      "weather": {
+        "summary": "Leichter Regen, windig",
+        "min": 4,
+        "max": 10,
+        "rain_mm": 16.5,
+        "wind_kmh": 28,
+        "source": "https://meteo-ch.ch/de/previsions-15-jours/zurich.html"
+      },
+      "hints": [
+        {
+          "level": "warn",
+          "text": "Nassester Tag der Woche: über 16 mm Regen, Wind bis 28 km/h. Indoor-Programm empfehlen."
+        },
+        {
+          "level": "info",
+          "text": "Sonntag: Läden geschlossen, erster Sonntagsverkauf erst am 29.11. (11 bis 18 Uhr)."
+        },
+        {
+          "level": "info",
+          "text": "Elektra-Premiere um 18 Uhr, Einführung 45 Minuten vorher. Gäste rechtzeitig losschicken."
+        }
+      ],
+      "events": [
+        {
+          "time": "tagsüber",
+          "title": "FC Zürich gegen FC St. Gallen",
+          "venue": "Stadion Letzigrund",
+          "cat": "Sport",
+          "check": "Anstosszeit nicht bestätigt (eine Quelle nennt 13:00), Heimrecht in den Quellen widersprüchlich. Vorab prüfen.",
+          "url": "https://stadionletzigrund.com/en/news/topic/football/start-in-die-neue-super-league-saison-2026-27-diese-spiele-finden-im-stadion-letzigrund-statt/"
+        },
+        {
+          "time": "11:00",
+          "title": "Der kleine Prinz",
+          "venue": "Schauspielhaus Zürich, Pfauen",
+          "cat": "Familie",
+          "note": "Laut Spielplan nur noch wenige Karten.",
+          "url": "https://www.schauspielhaus.ch/en/spielplan"
+        },
+        {
+          "time": "13:00",
+          "title": "Cavalluna «Die Farben des Lebens»",
+          "venue": "Hallenstadion, Oerlikon",
+          "cat": "Familie",
+          "note": "Letzte Zürcher Vorstellung.",
+          "url": "https://www.cavalluna.com/en/tickets/zurich"
+        },
+        {
+          "time": "14:00",
+          "title": "Circus Monti «Poussière d'étoiles»",
+          "venue": "Kasernenareal, Militärstrasse 16",
+          "cat": "Familie",
+          "note": "Zweite Vorstellung um 18 Uhr.",
+          "url": "https://zuri.net/de/zurich/agenda/22-11-2026"
+        },
+        {
+          "time": "14:00",
+          "title": "Dieter Ulrich's «Pool of Fools» (Disler/Grundel)",
+          "venue": "Kunsthaus Zürich",
+          "cat": "Kultur",
+          "note": "Live-Performance mit Band und 460 bemalten Dias.",
+          "url": "https://zuri.net/de/zurich/agenda/22-11-2026"
+        },
+        {
+          "time": "17:00",
+          "end": "19:00",
+          "title": "Klavierrezital Alexandra Dovgan",
+          "venue": "Tonhalle Zürich",
+          "cat": "Klassik & Oper",
+          "note": "Bach, Schubert, Chopin.",
+          "url": "https://zuri.net/de/zurich/agenda/22-11-2026"
+        },
+        {
+          "time": "18:00",
+          "title": "Premiere: Elektra (Richard Strauss)",
+          "venue": "Opernhaus Zürich, Hauptbühne",
+          "cat": "Klassik & Oper",
+          "pick": true,
+          "note": "Leitung Lorenzo Viotti, Regie Lydia Steier. Ca. 1 Std. 50 Min., Deutsch mit deutschen und englischen Übertiteln.",
+          "url": "https://www.opernhaus.ch/en/spielplan/calendar/elektra-1/"
+        },
+        {
+          "time": "18:00",
+          "end": "19:30",
+          "title": "Under the Northern Lights",
+          "venue": "Predigerkirche",
+          "cat": "Klassik & Oper",
+          "note": "Nordische Chormusik mit Lichtdesign.",
+          "url": "https://zuri.net/de/zurich/agenda/22-11-2026"
+        },
+        {
+          "time": "18:00",
+          "end": "21:00",
+          "title": "Circus Conelli «Magie erleben. Freude schenken»",
+          "venue": "Bauschänzli, Stadthausquai 2",
+          "cat": "Show & Bühne",
+          "pick": true,
+          "note": "Zirkus- und Zaubershow mitten in der Stadt.",
+          "url": "https://zuri.net/de/zurich/agenda/22-11-2026"
+        },
+        {
+          "time": "19:00",
+          "title": "Kneecap (IRL)",
+          "venue": "Limmathaus (X-TRA)",
+          "cat": "Konzert",
+          "url": "https://zuri.net/de/zurich/agenda/22-11-2026"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-23",
+      "weather": {
+        "summary": "Leichter Regen, wenig Wind",
+        "min": 5,
+        "max": 10,
+        "rain_mm": 3.9,
+        "wind_kmh": 14,
+        "source": "https://meteo-ch.ch/de/previsions-15-jours/zurich.html"
+      },
+      "hints": [
+        {
+          "level": "info",
+          "text": "Montag: Landesmuseum geschlossen, Kunsthaus nur Dienstag bis Sonntag offen. Im Opernhaus keine Vorstellung."
+        },
+        {
+          "level": "info",
+          "text": "Ruhiger Abend: Gewandhausorchester in der Tonhalle und Dreigroschenoper im Pfauen sind die grossen Optionen."
+        }
+      ],
+      "events": [
+        {
+          "time": "18:00",
+          "title": "Silvia Bolognesi & James Brandon Lewis",
+          "venue": "Kulturhaus Helferei",
+          "cat": "Konzert",
+          "note": "Jazz-Premiere, Blues bis freie Improvisation.",
+          "url": "https://zuri.net/de/zurich/agenda/23-11-2026"
+        },
+        {
+          "time": "abends",
+          "title": "Gewandhausorchester Leipzig",
+          "venue": "Tonhalle Zürich",
+          "cat": "Klassik & Oper",
+          "pick": true,
+          "note": "Migros-Kulturprozent-Classics.",
+          "check": "Beginnzeit und Programm auf der Quelle nicht angegeben.",
+          "url": "https://www.migros-kulturprozent-classics.ch/en/tickets/zurich"
+        },
+        {
+          "time": "19:30",
+          "title": "Die Dreigroschenoper",
+          "venue": "Schauspielhaus Zürich, Pfauen",
+          "cat": "Show & Bühne",
+          "pick": true,
+          "note": "Mit englischen Übertiteln.",
+          "url": "https://www.schauspielhaus.ch/en/spielplan"
+        },
+        {
+          "time": "19:30",
+          "title": "ZKB-Schillerpreis: Carte Blanche für Gerhard Meister",
+          "venue": "Museumsgesellschaft und Literaturhaus",
+          "cat": "Kultur",
+          "url": "https://zuri.net/de/zurich/agenda/23-11-2026"
+        },
+        {
+          "time": "19:30",
+          "end": "21:30",
+          "title": "Mike Casa: The OFFENSIVE Show",
+          "venue": "SOHO Zurich",
+          "cat": "Show & Bühne",
+          "note": "Stand-up auf Englisch.",
+          "url": "https://zuri.net/de/zurich/agenda/23-11-2026"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-24",
+      "weather": {
+        "summary": "Nebel, trocken und kalt",
+        "min": 2,
+        "max": 5,
+        "rain_mm": 0.0,
+        "wind_kmh": 4,
+        "source": "https://meteo-ch.ch/de/previsions-15-jours/zurich.html"
+      },
+      "hints": [
+        {
+          "level": "info",
+          "text": "Nebel bei 2 bis 5 °C: Gäste auf warme Kleidung hinweisen, Aussicht vom Uetliberg nicht versprechen."
+        }
+      ],
+      "events": [
+        {
+          "time": "18:00",
+          "end": "20:00",
+          "title": "Christoph Irniger presents «Eddie Who?»",
+          "venue": "Kulturclub Lebewohlfabrik",
+          "cat": "Konzert",
+          "note": "Jazz-Tribute an Eddie Harris.",
+          "url": "https://zuri.net/de/zurich/agenda/24-11-2026"
+        },
+        {
+          "time": "18:00",
+          "title": "Elaine Mitchener, Aruán Ortiz, Pat Thomas",
+          "venue": "Kulturhaus Helferei",
+          "cat": "Konzert",
+          "note": "Zürich-Premiere für zwei Klaviere und Stimme.",
+          "url": "https://zuri.net/de/zurich/agenda/24-11-2026"
+        },
+        {
+          "time": "19:30",
+          "end": "21:30",
+          "title": "Bostridge, Bloxham & Goldscheider: British Music for Strings",
+          "venue": "Tonhalle Zürich",
+          "cat": "Klassik & Oper",
+          "pick": true,
+          "note": "Britische Streichermusik, Leitung Jonathan Bloxham.",
+          "url": "https://zuri.net/de/zurich/agenda/24-11-2026"
+        },
+        {
+          "time": "19:30",
+          "title": "Simon & Garfunkel: Through the Years",
+          "venue": "Volkshaus Zürich, Stauffacherstrasse 60",
+          "cat": "Konzert",
+          "note": "Tribute-Show mit The Bookends, Türöffnung eine Stunde vorher.",
+          "url": "https://www.myswitzerland.com/en/experiences/events/simon-garfunkel-1/"
+        },
+        {
+          "time": "20:00",
+          "title": "Magic Kingdom",
+          "venue": "Schauspielhaus Zürich, Schiffbau Box",
+          "cat": "Show & Bühne",
+          "pick": true,
+          "note": "Neue Produktion, Einführung um 19:30.",
+          "url": "https://www.schauspielhaus.ch/en/spielplan"
+        },
+        {
+          "time": "20:00",
+          "end": "21:30",
+          "title": "Comedy at Weihnachtsallee (Eintritt frei)",
+          "venue": "Zürcher Weihnachtsallee, Europaallee",
+          "cat": "Show & Bühne",
+          "note": "Stand-up auf Englisch am Weihnachtsmarkt.",
+          "url": "https://zuri.net/de/zurich/agenda/24-11-2026"
+        },
+        {
+          "time": "20:00",
+          "end": "22:15",
+          "title": "Simon Enzler «zmetztinne»",
+          "venue": "Bernhard Theater, Sechseläutenplatz 1",
+          "cat": "Show & Bühne",
+          "note": "Kabarett in Appenzeller Mundart.",
+          "url": "https://zuri.net/de/zurich/agenda/24-11-2026"
+        }
+      ]
+    }
+  ],
+  "running": [
+    {
+      "title": "Weihnachten & Krippen",
+      "venue": "Landesmuseum Zürich",
+      "dates": "im Advent, Dienstag bis Sonntag 10 bis 17 Uhr",
+      "cat": "Kultur",
+      "note": "Traditionelle Krippenausstellung. Montags geschlossen.",
+      "url": "https://www.landesmuseum.ch/en/event/weihnachten-krippen-46196"
+    },
+    {
+      "title": "Maria Lassnig und Edvard Munch",
+      "venue": "Kunsthaus Zürich",
+      "dates": "2.10.2026 bis 21.2.2027",
+      "cat": "Kultur",
+      "note": "Rund 160 Gemälde und Arbeiten auf Papier.",
+      "url": "https://www.museums.ch/it/visita-al-museo/musei/mostre/maria-lassnig-und-edvard-munch-flux-pictural-=-flux-vital-7257.html"
+    },
+    {
+      "title": "Gondola Island",
+      "venue": "Lake Side",
+      "dates": "31.10.2026 bis 14.2.2027, täglich 12:00 bis 21:30",
+      "cat": "Kulinarik",
+      "note": "Käsefondue in echten Skigondeln am See, Gondeln ab 4 Personen buchbar.",
+      "url": "https://zuri.net/de/zurich/agenda/18-11-2026"
+    },
+    {
+      "title": "Ni's Tom Yam Hot Pot",
+      "venue": "Lake Side",
+      "dates": "bis Ende Januar 2027, Mittwoch bis Samstag ab 18 Uhr",
+      "cat": "Kulinarik",
+      "note": "Thai-Hot-Pot zum Teilen.",
+      "url": "https://zuri.net/de/zurich/agenda/18-11-2026"
+    },
+    {
+      "title": "Swiss Lakes AR: Schwebende Skulptur über dem Zürichsee",
+      "venue": "Schiffstation Bürkliplatz",
+      "dates": "täglich 6 bis 22 Uhr",
+      "cat": "Kultur",
+      "note": "Per Smartphone vor Ort sichtbar, ohne App.",
+      "url": "https://zuri.net/de/zurich/agenda/18-11-2026"
+    },
+    {
+      "title": "Alice im Wunderland (Kinderoper)",
+      "venue": "Opernhaus Zürich",
+      "dates": "Vorstellungen u. a. 21.11. und 28.11.2026",
+      "cat": "Familie",
+      "url": "https://www.opernhaus.ch/en/spielplan/calendar/alice-im-wunderland/"
+    }
+  ],
+  "preview": [
+    {
+      "date": "2026-11-25",
+      "title": "Noah Kahan",
+      "venue": "Hallenstadion",
+      "url": "https://songkick.com/concerts/43150471-noah-kahan-at-hallenstadion"
+    },
+    {
+      "date": "2026-11-26",
+      "title": "Westlife",
+      "venue": "Hallenstadion",
+      "url": "https://www.nume.ch/?p=12410"
+    },
+    {
+      "date": "2026-11-28",
+      "title": "GC gegen FC Basel (Super League)",
+      "venue": "Stadion Letzigrund",
+      "url": "https://www.nau.ch/sport/gc/matches"
+    },
+    {
+      "date": "2026-11-29",
+      "title": "ZSC Lions gegen HC Ajoie (14 Uhr)",
+      "venue": "Swiss Life Arena",
+      "url": "https://www.ticketcorner.ch/artist/zsc-lions/zsc-lions-national-league-202627-1571863/"
+    },
+    {
+      "date": "2026-11-29",
+      "title": "Das Rheingold (Wagner), 20 Uhr",
+      "venue": "Opernhaus Zürich",
+      "url": "https://www.opernhaus.ch/en/spielplan/calendar/page2"
+    },
+    {
+      "date": "2026-12-04",
+      "title": "Premiere: Das grosse Heft (Ágota Kristóf)",
+      "venue": "Schauspielhaus Zürich, Pfauen",
+      "url": "https://www.schauspielhaus.ch/en/spielplan"
+    },
+    {
+      "date": "2026-12-05",
+      "title": "Rea Garvey's Christmas Calling",
+      "venue": "Kongresshaus Zürich",
+      "url": "https://kongresshaus.ch/en/experience/event-calendar/rea-garvey-s-christmas-calling-2"
+    },
+    {
+      "date": "2026-12-12",
+      "title": "Zürcher Derby: FC Zürich gegen GC",
+      "venue": "Stadion Letzigrund",
+      "url": "https://www.nau.ch/sport/gc/matches"
+    }
+  ],
+  "advent": {
+    "markets": [
+      {
+        "title": "Bellevue Noël",
+        "venue": "Sechseläutenplatz, vor dem Opernhaus",
+        "dates": "19.11. bis 23.12.2026",
+        "end": "2026-12-23",
+        "hours": "Mo bis Sa 11 bis 22 Uhr, So 11 bis 20 Uhr",
+        "note": "Über 100 Stände, begehbarer Adventskranz (Zeitfenster-Ticket), Fondue-Chalet für bis zu 400 Gäste.",
+        "url": "https://www.swissactivities.com/en-ch/christmas-markets/zurich/"
+      },
+      {
+        "title": "Polarzauber im HB",
+        "venue": "Hauptbahnhof, Bahnhofhalle",
+        "dates": "19.11. bis 24.12.2026",
+        "end": "2026-12-24",
+        "hours": "So bis Mi 11 bis 21 Uhr, Do bis Sa 11 bis 22 Uhr, 24.12. 11 bis 16 Uhr",
+        "note": "Früher Christkindlimarkt. Fondue-Express und Lindt-Weihnachtszug, ideal bei Regen.",
+        "covered": true,
+        "url": "https://www.swissactivities.com/en-ch/christmas-markets/zurich/"
+      },
+      {
+        "title": "Weihnachtsmarkt Münsterhof",
+        "venue": "Münsterhof, vor dem Fraumünster",
+        "dates": "19.11. bis 24.12.2026",
+        "end": "2026-12-24",
+        "hours": "Mo bis Sa 11 bis 21:30 Uhr, So 11 bis 19:30 Uhr",
+        "note": "Zürcher Stände, Kulturzelt mit Konzerten an den meisten Abenden.",
+        "url": "https://www.swissactivities.com/en-ch/christmas-markets/zurich/"
+      },
+      {
+        "title": "Weihnachtsmarkt Dörfli",
+        "venue": "Niederdorf, Altstadtgassen",
+        "dates": "19.11. bis 23.12.2026",
+        "end": "2026-12-23",
+        "hours": "Mo bis Do 11 bis 21 Uhr, Fr und Sa 11 bis 22 Uhr, So 11 bis 20 Uhr",
+        "note": "Rund 70 Hütten, Feuershows auf Zwingli- und Hirschenplatz.",
+        "url": "https://www.swissactivities.com/en-ch/christmas-markets/zurich/"
+      },
+      {
+        "title": "Singing Christmas Tree",
+        "venue": "Werdmühleplatz",
+        "dates": "19.11. bis 23.12.2026",
+        "end": "2026-12-23",
+        "hours": "Mo bis Do 16 bis 21 Uhr, Fr 16 bis 22 Uhr, Sa 13 bis 22 Uhr, So 13 bis 21 Uhr",
+        "note": "Chöre auf der Baum-Bühne: Mo bis Do 17:30 und 18:30, Sa und So auch 14:30 und 15:30. Eintritt frei.",
+        "check": "Freitag je nach Quelle bis 21 oder 22 Uhr",
+        "url": "https://www.swissactivities.com/en-ch/christmas-markets/zurich/"
+      },
+      {
+        "title": "Zürcher Weihnachtsallee",
+        "venue": "Europaallee, beim HB",
+        "dates": "19.11. bis 23.12.2026",
+        "end": "2026-12-23",
+        "hours": "Mo bis Sa 11 bis 22 Uhr, So 11 bis 20 Uhr",
+        "note": "Rund 80 wechselnde Aussteller, Fondue-Chalet, Karaoke-Bar. Am 19.11. erst ab 16 Uhr.",
+        "url": "https://www.swissactivities.com/en-ch/christmas-markets/zurich/"
+      },
+      {
+        "title": "Weihnachtsbeleuchtung «Lucy»",
+        "venue": "Bahnhofstrasse",
+        "dates": "19.11.2026 bis 4.1.2027",
+        "end": "2027-01-04",
+        "note": "Wird am 19.11. um 18 Uhr eingeschaltet.",
+        "url": "https://www.nume.ch/?p=12491"
+      },
+      {
+        "title": "ILLUMINARIUM",
+        "venue": "Landesmuseum, Innenhof",
+        "dates": "5.11. bis 30.12.2026",
+        "end": "2026-12-30",
+        "note": "Lichtshows und Food-Court im Innenhof. Show-Tickets ab CHF 14.90.",
+        "url": "https://www.swissactivities.com/en-ch/christmas-markets/zurich/"
+      },
+      {
+        "title": "Zauberpark",
+        "venue": "The Circle am Flughafen",
+        "dates": "18.11. bis 6.12.2026",
+        "end": "2026-12-06",
+        "note": "Licht-Park beim Flughafen.",
+        "url": "https://www.nume.ch/?p=12491"
+      },
+      {
+        "title": "Uetliberg Winter Magic",
+        "venue": "Uto Kulm, Uetliberg",
+        "dates": "Wochenenden bis 20.12.2026",
+        "end": "2026-12-20",
+        "hours": "Sa 12 bis 20 Uhr, So 10 bis 18 Uhr",
+        "note": "Kleiner Markt auf dem Hausberg, mit Fondue im Maiensäss.",
+        "check": "Zeiten je nach Quelle leicht anders",
+        "url": "https://www.swissactivities.com/en-ch/christmas-markets/zurich/"
+      },
+      {
+        "title": "Märlitram",
+        "venue": "Stadt Zürich",
+        "dates": "20.11. bis 23.12.2026",
+        "end": "2026-12-23",
+        "url": "https://www.nume.ch/?p=12491"
+      }
+    ],
+    "dates": [
+      {
+        "date": "2026-11-19",
+        "time": "18:00",
+        "title": "Lucy wird eingeschaltet, Night Shopping bis 21 Uhr",
+        "venue": "Bahnhofstrasse und Innenstadt",
+        "cat": "Advent",
+        "pick": true,
+        "url": "https://www.zuerich.com/de/besuchen/oeffnungszeiten-festtage"
+      },
+      {
+        "date": "2026-11-21",
+        "until": "2026-12-31",
+        "title": "Circus Conelli, der Weihnachtszirkus",
+        "venue": "Bauschänzli, Stadthausquai 2",
+        "cat": "Show & Bühne",
+        "note": "Akrobatik, Comedy und Live-Musik, ohne Tiere. Auf Wunsch mit 4-Gang-Gala-Dinner.",
+        "url": "https://www.zuerich.com/de/circus-conelli"
+      },
+      {
+        "date": "2026-11-29",
+        "time": "17:00",
+        "title": "Samichlaus-Umzug",
+        "venue": "Ab Werdmühleplatz über die Bahnhofstrasse zum Bürkliplatz",
+        "cat": "Familie",
+        "pick": true,
+        "note": "Märlitram vorneweg, Samichläuse verteilen kleine Geschenke, Fest am Bürkliplatz.",
+        "url": "https://www.zuerich.com/de/samichlaus-umzug-zuerich"
+      },
+      {
+        "date": "2026-12-01",
+        "until": "2026-12-23",
+        "time": "17:30",
+        "title": "Musikalischer Adventskalender",
+        "venue": "Opernhaus Zürich, meist im Eingangsfoyer",
+        "cat": "Klassik & Oper",
+        "note": "Täglich um 17:30 bis 23.12.",
+        "url": "https://www.opernhaus.ch/en/spielplan/calendar/musikalischer_adventskalender/"
+      },
+      {
+        "date": "2026-12-05",
+        "time": "abends",
+        "title": "Rea Garvey's Christmas Calling",
+        "venue": "Kongresshaus Zürich, Kongresssaal",
+        "cat": "Konzert",
+        "note": "Türöffnung 19 Uhr.",
+        "url": "https://kongresshaus.ch/en/experience/event-calendar/rea-garvey-s-christmas-calling-2"
+      },
+      {
+        "date": "2026-12-06",
+        "title": "Samichlausschwimmen",
+        "venue": "Limmat, ab Pier 7 (Limmatquai 7) bis Frauenbad",
+        "cat": "Advent",
+        "note": "Rund 300 Schwimmerinnen und Schwimmer für einen guten Zweck.",
+        "check": "Startzeit noch nicht publiziert",
+        "url": "https://www.zuerich.com/de/events-nachtleben/zuercher-traditionen/samichlausschwimmen"
+      },
+      {
+        "date": "2026-12-13",
+        "time": "18:00",
+        "title": "Feliz Navidad: Weihnachten mit Semino Rossi",
+        "venue": "Kongresshaus Zürich",
+        "cat": "Konzert",
+        "url": "https://www.myswitzerland.com/de-ch/erlebnisse/veranstaltungen/feliz-navidad-semino-rossi/"
+      },
+      {
+        "date": "2026-12-20",
+        "time": "17:00",
+        "title": "Händels Messiah",
+        "venue": "Tonhalle Zürich",
+        "cat": "Klassik & Oper",
+        "pick": true,
+        "note": "Schweizer Jugendchor und La Cetra Barockorchester, Leitung Nicolas Fink.",
+        "url": "https://www.guidle.com/de/veranstaltungen/musik/zuerich/schweizer-jugendchor-haendels-messiah_AnQNHJL"
+      },
+      {
+        "date": "2026-12-20",
+        "time": "18:00",
+        "title": "Premiere: La traviata",
+        "venue": "Opernhaus Zürich",
+        "cat": "Klassik & Oper",
+        "note": "Laut Spielplan ausverkauft, Restkarten an der Abendkasse.",
+        "url": "https://www.opernhaus.ch/en/spielplan/calendar/la-traviata-1/"
+      },
+      {
+        "date": "2026-12-31",
+        "time": "14:00",
+        "title": "Silvesterzauber am See",
+        "venue": "Bürkliplatz, Schifflände, General-Guisan-Quai",
+        "cat": "Kultur",
+        "pick": true,
+        "note": "Streetfood ab 14 Uhr, Musik ab 20 Uhr, Feuerwerk in den ersten Minuten des neuen Jahres. Eintritt frei.",
+        "url": "https://www.zvv.ch/de/freizeit-und-events/freizeittipps/events/Silvesterzauber.html"
+      },
+      {
+        "date": "2026-12-31",
+        "time": "18:00",
+        "title": "Die lustige Witwe (Lehár)",
+        "venue": "Opernhaus Zürich",
+        "cat": "Klassik & Oper",
+        "url": "https://www.opernhaus.ch/en/spielplan/calendar/die-lustige-witwe/"
+      },
+      {
+        "date": "2026-12-31",
+        "time": "19:00",
+        "title": "Silvesterkonzert mit Wayne Marshall",
+        "venue": "Tonhalle Zürich",
+        "cat": "Klassik & Oper",
+        "pick": true,
+        "note": "Tonhalle-Orchester mit Gershwin, Bernstein und dem Nussknacker von Ellington.",
+        "url": "https://www.myswitzerland.com/en-ch/experiences/events/silvesterkonzert-mit-wayne-marshall-1/"
+      },
+      {
+        "date": "2026-12-31",
+        "time": "19:00",
+        "title": "Circus Conelli: Silvester-Gala",
+        "venue": "Bauschänzli, Stadthausquai 2",
+        "cat": "Show & Bühne",
+        "check": "Eine Quelle nennt 14:00",
+        "url": "https://www.myswitzerland.com/en-au/experiences/events/circus-conelli-2026-silvester-gala/"
+      },
+      {
+        "date": "2027-01-01",
+        "time": "11:15",
+        "title": "Neujahrskonzert «Fuchs & Jordan»",
+        "venue": "Opernhaus Zürich",
+        "cat": "Klassik & Oper",
+        "pick": true,
+        "note": "Zweites Konzert am 2.1. um 19:30.",
+        "url": "https://www.opernhaus.ch/en/spielplan/calendar/neujahrskonzert-1/"
+      }
+    ],
+    "holidays": [
+      {
+        "date": "2026-11-29",
+        "label": "1. Advent",
+        "text": "Sonntagsverkauf 11 bis 18 Uhr. Samichlaus-Umzug um 17 Uhr ab Werdmühleplatz.",
+        "url": "https://www.zuerich.com/de/besuchen/oeffnungszeiten-festtage"
+      },
+      {
+        "date": "2026-12-06",
+        "label": "2. Advent",
+        "text": "Sonntagsverkauf 11 bis 18 Uhr. Samichlausschwimmen in der Limmat.",
+        "url": "https://www.zuerich.com/de/besuchen/oeffnungszeiten-festtage"
+      },
+      {
+        "date": "2026-12-20",
+        "label": "4. Advent",
+        "text": "Letzter Sonntagsverkauf 11 bis 18 Uhr. Abends Messiah in der Tonhalle und Premiere von La traviata.",
+        "url": "https://www.zuerich.com/de/besuchen/oeffnungszeiten-festtage"
+      },
+      {
+        "date": "2026-12-23",
+        "label": "Letzter Markttag",
+        "text": "Bellevue Noël, Dörfli, Singing Christmas Tree und Weihnachtsallee schliessen heute. Polarzauber und Münsterhof bleiben bis 24.12. offen.",
+        "url": "https://www.swissactivities.com/en-ch/christmas-markets/zurich/"
+      },
+      {
+        "date": "2026-12-24",
+        "label": "Heiligabend",
+        "text": "Polarzauber im HB 11 bis 16 Uhr, Münsterhof offen. Kunsthaus 10 bis 16 Uhr. Keine Vorstellung im Opernhaus. Circus Conelli um 11 und 15 Uhr.",
+        "url": "https://www.swissactivities.com/en-ch/christmas-markets/zurich/"
+      },
+      {
+        "date": "2026-12-25",
+        "label": "Weihnachten",
+        "text": "Feiertag, Läden grundsätzlich zu. Kunsthaus geschlossen, keine Vorstellung im Opernhaus.",
+        "url": "https://www.zuerich.com/de/besuchen/oeffnungszeiten-festtage"
+      },
+      {
+        "date": "2026-12-26",
+        "label": "Stephanstag",
+        "text": "Opernhaus mit Manon Lescaut (13 Uhr) und Romeo und Julia (19:30). Circus Conelli um 11, 15 und 19 Uhr.",
+        "url": "https://www.opernhaus.ch/en/spielplan/calendar/"
+      },
+      {
+        "date": "2026-12-31",
+        "label": "Silvester",
+        "text": "Silvesterzauber am See ab 14 Uhr. ÖV fährt die ganze Nacht bis 4 Uhr. Nach Mitternacht nicht über Stadelhofen schicken (lange Wartezeiten bis etwa 01:30), besser HB, Enge oder Wollishofen. Kunsthaus 10 bis 16 Uhr.",
+        "url": "https://www.zvv.ch/de/freizeit-und-events/freizeittipps/events/Silvesterzauber.html"
+      },
+      {
+        "date": "2027-01-01",
+        "label": "Neujahr",
+        "text": "Kunsthaus geschlossen. Neujahrskonzert im Opernhaus um 11:15.",
+        "url": "https://www.opernhaus.ch/en/spielplan/calendar/neujahrskonzert-1/"
+      },
+      {
+        "date": "2027-01-02",
+        "label": "Berchtoldstag",
+        "text": "New Year Shopping: viele Läden in der Innenstadt 9 bis 20 Uhr offen. Zweites Neujahrskonzert um 19:30.",
+        "url": "https://www.zuerich.com/de/besuchen/oeffnungszeiten-festtage"
+      }
+    ]
+  },
+  "museums": [
+    {
+      "name": "Kunsthaus Zürich",
+      "address": "Heimplatz 1",
+      "summary": "Di bis So 10 bis 18 Uhr, Do bis 20 Uhr, Mo zu",
+      "hours": {
+        "mo": null,
+        "di": "10:00-18:00",
+        "mi": "10:00-18:00",
+        "do": "10:00-20:00",
+        "fr": "10:00-18:00",
+        "sa": "10:00-18:00",
+        "so": "10:00-18:00"
+      },
+      "special": {
+        "2026-12-24": "10:00-16:00",
+        "2026-12-25": null,
+        "2026-12-26": "10:00-18:00",
+        "2026-12-28": "10:00-18:00",
+        "2026-12-31": "10:00-16:00",
+        "2027-01-01": null
+      },
+      "note": "Sammlung mittwochs für alle gratis. Aktuell: Maria Lassnig und Edvard Munch.",
+      "url": "https://kunsthaus.ch/en/besuch-planen/besucherinfos/"
+    },
+    {
+      "name": "Landesmuseum Zürich",
+      "address": "Museumstrasse 2, beim HB",
+      "summary": "Di bis So 10 bis 17 Uhr, Mo zu",
+      "hours": {
+        "mo": null,
+        "di": "10:00-17:00",
+        "mi": "10:00-17:00",
+        "do": "10:00-17:00",
+        "fr": "10:00-17:00",
+        "sa": "10:00-17:00",
+        "so": "10:00-17:00"
+      },
+      "special": {
+        "2026-12-21": "10:00-17:00",
+        "2026-12-24": "10:00-14:00",
+        "2026-12-25": "10:00-17:00",
+        "2026-12-26": "10:00-17:00",
+        "2026-12-28": "10:00-17:00",
+        "2026-12-31": "10:00-17:00",
+        "2027-01-01": "10:00-17:00"
+      },
+      "note": "Aktuell: Weihnachten & Krippen. ILLUMINARIUM im Innenhof ab 17 Uhr.",
+      "url": "https://www.landesmuseum.ch/en/event/weihnachten-krippen-46196"
+    },
+    {
+      "name": "Museum Rietberg",
+      "address": "Gablerstrasse 15, im Rieterpark",
+      "summary": "Di bis So 10 bis 17 Uhr, Do bis 20 Uhr, Mo zu",
+      "hours": {
+        "mo": null,
+        "di": "10:00-17:00",
+        "mi": "10:00-17:00",
+        "do": "10:00-20:00",
+        "fr": "10:00-17:00",
+        "sa": "10:00-17:00",
+        "so": "10:00-17:00"
+      },
+      "note": "Kunst aus Asien, Afrika, Amerika und Ozeanien.",
+      "check": "Feiertagszeiten noch nicht publiziert",
+      "url": "https://www.zuerich.com/de/besuchen/kultur/museum-rietberg-kunst-aus-aller-welt"
+    },
+    {
+      "name": "Museum Haus Konstruktiv",
+      "address": "Limmatstrasse 268",
+      "summary": "Di bis So 11 bis 18 Uhr, Mi bis 20 Uhr, Mo zu",
+      "hours": {
+        "mo": null,
+        "di": "11:00-18:00",
+        "mi": "11:00-20:00",
+        "do": "11:00-18:00",
+        "fr": "11:00-18:00",
+        "sa": "11:00-18:00",
+        "so": "11:00-18:00"
+      },
+      "note": "Konkrete und konzeptuelle Kunst. Unter 18 gratis.",
+      "url": "https://hauskonstruktiv.ch/en/visit/"
+    },
+    {
+      "name": "Lindt Home of Chocolate",
+      "address": "Schokoladenplatz 1, Kilchberg",
+      "summary": "Täglich 10 bis 19 Uhr",
+      "hours": {
+        "mo": "10:00-19:00",
+        "di": "10:00-19:00",
+        "mi": "10:00-19:00",
+        "do": "10:00-19:00",
+        "fr": "10:00-19:00",
+        "sa": "10:00-19:00",
+        "so": "10:00-19:00"
+      },
+      "note": "Schokoladen-Erlebnis am See. Brunnen, Shop und Café ohne Ticket.",
+      "url": "https://www.zuerich.com/de/besuchen/kultur/lindt-home-of-chocolate"
+    },
+    {
+      "name": "Zoo Zürich",
+      "address": "Zürichbergstrasse 221",
+      "summary": "Winter täglich 9 bis 17 Uhr, Masoala Regenwald 10 bis 17 Uhr",
+      "hours": {
+        "mo": "09:00-17:00",
+        "di": "09:00-17:00",
+        "mi": "09:00-17:00",
+        "do": "09:00-17:00",
+        "fr": "09:00-17:00",
+        "sa": "09:00-17:00",
+        "so": "09:00-17:00"
+      },
+      "note": "Winterzeiten gelten November bis Februar.",
+      "url": "https://www.zuerich.com/de/besuchen/natur/zoo-zuerich-masoala-regenwald"
+    },
+    {
+      "name": "FIFA Museum",
+      "address": "Enge",
+      "hours": null,
+      "url": "https://fifamuseum.com/visit/plan-your-visit/opening-hours-and-directions"
+    },
+    {
+      "name": "Museum für Gestaltung",
+      "address": "Ausstellungsstrasse 60 und Toni-Areal, Pfingstweidstrasse 96",
+      "hours": null,
+      "note": "Pavillon Le Corbusier nur saisonal geöffnet.",
+      "url": "https://www.zvv.ch/de/freizeit-und-events/freizeittipps/kunst-und-kultur/museum-fuer-gestaltung-zuerich.html"
+    }
+  ],
+  "cinemas": [
+    {
+      "name": "blue Cinema Abaton",
+      "area": "Escher Wyss, Kreis 5",
+      "note": "Multiplex mit IMAX-Saal, viele englische Originalversionen.",
+      "url": "https://zuri.net/de/zurich/kinos"
+    },
+    {
+      "name": "blue Cinema Capitol",
+      "area": "Kreis 1",
+      "note": "Sechs Säle im Zentrum, viele englische Originalversionen.",
+      "url": "https://zuri.net/de/zurich/kinos"
+    },
+    {
+      "name": "blue Cinema Corso",
+      "area": "Kreis 1",
+      "note": "Vier Säle, aktuelle Filme.",
+      "url": "https://zuri.net/de/zurich/kinos"
+    },
+    {
+      "name": "Arena Cinemas",
+      "area": "Sihlcity, Kreis 3",
+      "note": "Grosses Multiplex. Englische und deutsche Fassungen gemischt, Version beim Buchen prüfen.",
+      "url": "https://zuri.net/de/zurich/kinos"
+    },
+    {
+      "name": "Houdini",
+      "area": "Werd, Kreis 4",
+      "note": "Kino und Bar, oft englische Originalversion.",
+      "url": "https://zuri.net/de/zurich/kinos"
+    },
+    {
+      "name": "Arthouse Le Paris",
+      "area": "Kreis 1",
+      "note": "Ein Saal mit persönlicher Atmosphäre.",
+      "url": "https://zuri.net/de/zurich/kinos"
+    },
+    {
+      "name": "Arthouse Piccadilly",
+      "area": "Mühlebach, Kreis 8",
+      "note": "Arthouse-Filme ohne Pause.",
+      "url": "https://zuri.net/de/zurich/kinos"
+    },
+    {
+      "name": "Filmpodium",
+      "area": "City, Kreis 1",
+      "note": "Städtisches Kino für Klassiker und Retrospektiven, kleine Bar.",
+      "url": "https://zuri.net/de/zurich/kinos"
+    },
+    {
+      "name": "Riffraff",
+      "area": "Neugasse 57 bis 63",
+      "note": "Kino und Bar, Filme abseits des Mainstreams.",
+      "url": "https://zuri.net/de/zurich/kinos"
+    },
+    {
+      "name": "KinoKoni",
+      "area": "Lagerstrasse 194",
+      "note": "Früher Kosmos. Zeigt auch englische Fassungen.",
+      "url": "https://zuri.net/de/zurich/kinos"
+    }
+  ],
+  "films": {
+    "date": "2026-11-19",
+    "source": "https://en.cinefile.ch/cinema/times/1",
+    "note": "Zeiten laut cinefile.ch, vor dem Kinobesuch beim Kino bestätigen.",
+    "items": [
+      {
+        "title": "The Hunger Games: Sunrise on the Reaping",
+        "version": "E/d/f",
+        "pick": true,
+        "shows": [
+          {
+            "cinema": "blue Cinema Abaton",
+            "times": "17:00, 20:00, 20:30"
+          },
+          {
+            "cinema": "blue Cinema Corso",
+            "times": "17:00, 20:15"
+          },
+          {
+            "cinema": "KinoKoni",
+            "times": "17:30, 20:20"
+          }
+        ]
+      },
+      {
+        "title": "The Odyssey",
+        "version": "E/d/f",
+        "pick": true,
+        "shows": [
+          {
+            "cinema": "blue Cinema Abaton",
+            "times": "16:45"
+          }
+        ]
+      },
+      {
+        "title": "Wild Horse Nine",
+        "version": "E/d/f",
+        "shows": [
+          {
+            "cinema": "Houdini",
+            "times": "18:00, 20:40, 21:10"
+          },
+          {
+            "cinema": "Arthouse Movie",
+            "times": "18:10, 20:40"
+          },
+          {
+            "cinema": "blue Cinema Capitol",
+            "times": "18:15, 21:00"
+          }
+        ]
+      },
+      {
+        "title": "Ebenezer",
+        "version": "E/d/f",
+        "shows": [
+          {
+            "cinema": "KinoKoni",
+            "times": "17:40, 20:30"
+          },
+          {
+            "cinema": "blue Cinema Capitol",
+            "times": "17:45, 20:30"
+          },
+          {
+            "cinema": "Arena Cinemas",
+            "times": "20:35"
+          }
+        ]
+      },
+      {
+        "title": "Wildwood",
+        "version": "E/d",
+        "shows": [
+          {
+            "cinema": "blue Cinema Capitol",
+            "times": "17:00, 20:00"
+          },
+          {
+            "cinema": "Arena Cinemas",
+            "times": "17:30, 20:20"
+          },
+          {
+            "cinema": "Houdini",
+            "times": "18:20, 20:40"
+          }
+        ]
+      },
+      {
+        "title": "The Only Living Pickpocket in New York",
+        "version": "E/d/f",
+        "shows": [
+          {
+            "cinema": "Houdini",
+            "times": "17:00, 21:10"
+          },
+          {
+            "cinema": "Arena Cinemas",
+            "times": "18:10"
+          },
+          {
+            "cinema": "blue Cinema Corso",
+            "times": "18:40, 21:00"
+          }
+        ]
+      },
+      {
+        "title": "A Talent for Murder",
+        "version": "E/d/f",
+        "shows": [
+          {
+            "cinema": "blue Cinema Capitol",
+            "times": "13:30, 16:00, 17:45"
+          },
+          {
+            "cinema": "Arthouse Piccadilly",
+            "times": "20:50"
+          }
+        ]
+      },
+      {
+        "title": "Spider-Man: Brand New Day",
+        "version": "E/d/f",
+        "shows": [
+          {
+            "cinema": "Arena Cinemas",
+            "times": "17:45"
+          }
+        ]
+      },
+      {
+        "title": "Verity",
+        "version": "E/d/f",
+        "shows": [
+          {
+            "cinema": "Arena Cinemas",
+            "times": "20:40"
+          },
+          {
+            "cinema": "blue Cinema Capitol",
+            "times": "20:55"
+          }
+        ]
+      },
+      {
+        "title": "Queen Christina",
+        "version": "E/d/f",
+        "shows": [
+          {
+            "cinema": "Filmpodium",
+            "times": "18:15"
+          }
+        ],
+        "note": "Filmklassiker im Filmpodium."
+      }
+    ]
+  }
+}
